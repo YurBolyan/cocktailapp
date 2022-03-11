@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Registeration from "./components/Registeration"
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
 import Home from "./components/Home"
 import {
@@ -9,6 +8,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import './App.css';
 
 
 function App() {
