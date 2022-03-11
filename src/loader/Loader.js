@@ -1,9 +1,12 @@
-import React from 'react'
-
-function Loader() {
+export const Loader = () => {
   return (
-    <div>Loading...</div>
-  )
-}
-
-export default Loader
+    <button className="btn btn-primary" type="button" disabled>
+      <span
+        className="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      Loading...
+    </button>
+  );
+};

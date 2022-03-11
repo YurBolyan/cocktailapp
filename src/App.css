@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+body {
+  background: url('../src/components/eee.jpg');
+  background-size: cover;
+}
+
+
+/* .foo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: #fff;
+  padding: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +31,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

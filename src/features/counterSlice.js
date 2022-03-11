@@ -21,7 +21,7 @@ export const getCocktails = createAsyncThunk("cocktails/getCocktails", async () 
     allCoctails : []
   },
   reducers: {
-    getAllCoctails : (state, action) => {
+    addCocktails : (state) => {
      state.allCoctails.push(state.cocktails)
     },
      deleteCocktail: (state, action) => {
@@ -48,7 +48,7 @@ export const getCocktails = createAsyncThunk("cocktails/getCocktails", async () 
   }
 })
 
-export const  { getAllCoctails, deleteCocktail , hideLoader, closeLoader} = cocktailsSlice.actions;
+export const  { addCocktails, deleteCocktail} = cocktailsSlice.actions;
 export const selectAllCoctails = (state) => state.cocktails.allCoctails;
 export default cocktailsSlice.reducer
 

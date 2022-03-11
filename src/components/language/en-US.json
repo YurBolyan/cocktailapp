@@ -1,0 +1,15 @@
+{
+    "name" : "Name",
+    "email": "email",
+    "password": "password",
+    "register": "register",
+    "error.message": "I got it you are in hurry! But every Field is important!",
+    "signIn": "sign in",
+    "login": "login",
+    "signUp": "register",
+    "error.message.login": "Fill correct Info else keep trying.",
+    "logout": "logout",
+    "close": "close",
+    "getCocktail": "getCocktail",
+    "addCocktail": "addCocktail"
+}

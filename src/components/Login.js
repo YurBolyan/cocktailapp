@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components"
+import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
+
+
+const InputContainer = styled.div`
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 400px;
+background: forestgreen;
+opacity: 0.75;
+padding: 40px;
+border: 1px solid rgba(0, 0, 0, 0.1);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+`
 
 function Login() {
+
   const [emaillog, setEmaillog] = useState(" ");
   const [passwordlog, setPasswordlog] = useState(" ");
 
@@ -44,35 +61,38 @@ function Login() {
   }
 
   
-  const RegistrationInputs = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  background: #fff;
-  padding: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-`
+
 
   return (
     <div>
-      <RegistrationInputs>
         <form onSubmit={handleLogin}>
-          <h3>Login</h3>
+          <InputContainer>
+          <FormattedMessage
+            id="login"
+            defaultMessage="register"
+          />
+
           <div className="form-group">
-            <label>Email</label>
+            <FormattedMessage 
+              id="email"
+              defaultMessage="email"
+            />
+
             <input
               type="email"
               className="form-control"
               placeholder="Enter email"
               onChange={(event) => setEmaillog(event.target.value)}
             />
+            
+            
           </div>
 
           <div className="form-group">
-            <label>Password</label>
+            <FormattedMessage
+              id="password"
+              defaultMessage="password"
+            />
             <input
               type="password"
               className="form-control"
@@ -82,17 +102,28 @@ function Login() {
           </div>
 
           <button type="submit" className="btn btn-dark btn-lg btn-block">
-            Login
+            <FormattedMessage
+              id="login"
+              defaultMessage="login"
+            />
           </button>
 
           {flag && (
             <Alert color="primary" variant="warning">
-              Fill correct Info else keep trying.
+              <FormattedMessage
+                id="error.message.login"
+                defaultMessage="Fill correct Info else keep trying."
+              />
             </Alert>
           )}
+        <p onClick={navigateRegistration}>
+          <FormattedMessage
+            id="signUp"
+            defaultMessage="register"
+         /></p>
+
+          </InputContainer>
         </form>
-        <p onClick={navigateRegistration}>Sign up</p>
-        </RegistrationInputs>
       </div>
   );
 }
