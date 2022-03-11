@@ -44,7 +44,7 @@ function Home() {
     const { cocktails,allCoctails } = useSelector((state) => state.cocktails)
     useEffect(() => {
         dispatch(getCocktails())
-    },[])
+    },[dispatch])
     
     function appButtonHandler () {
         dispatch(addCocktails())
