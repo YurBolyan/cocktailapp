@@ -3,7 +3,7 @@ import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from 'styled-components'
 import { FormattedMessage } from "react-intl";
-import { Context } from "../components//Wrapper"
+import { Context } from "../components/Wrapper"
 
 const InputContainer = styled.div`
 position: absolute;
@@ -19,8 +19,9 @@ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 `
 
 const CocktailApp = styled.div`
-  background: rgb(138, 238, 130);
-  color: rgb(60,60,60);
+  background: rgb(138, 238, 130, .4);
+  color: #fff;
+  padding: 10px;
 
 `
 

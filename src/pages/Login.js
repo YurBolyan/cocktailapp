@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
-
+import { Context } from "../components/Wrapper";
 
 
 const InputContainer = styled.div`
@@ -62,15 +62,21 @@ function Login() {
 
   
 
+  const context = useContext(Context)
 
   return (
     <div>
+       <select value={context.locale} onChange={context.selectLang}>
+            <option value="en-US">English</option>
+            <option value="hy-AM">Armenian</option>
+          </select>
         <form onSubmit={handleLogin}>
           <InputContainer>
-          <FormattedMessage
-            id="login"
-            defaultMessage="register"
-          />
+         <h2> <FormattedMessage
+              id="login"
+              defaultMessage="register"
+            />
+          </h2>
 
           <div className="form-group">
             <FormattedMessage 

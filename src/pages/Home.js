@@ -1,5 +1,5 @@
 /* eslint-disable no-lone-blocks */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import  { getCocktails } from "../features/counterSlice";
@@ -9,6 +9,7 @@ import {Loader} from "../loader/Loader";
 import styled from 'styled-components';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FormattedMessage } from "react-intl";
+import { Context } from "../components/Wrapper"
 
 
 const LogoutButton = styled.div`
@@ -59,10 +60,10 @@ function Home() {
     function closeModal(){
         setModalIsOpen(false)
     }
+    const context = useContext(Context)
    return (
     <div>
-        
-     
+      
        <GetCocktail>
           <div onClick={openModal}>
             <FormattedMessage
@@ -70,6 +71,10 @@ function Home() {
                 defaultMessage="getCocktail"
             /></div>
        </GetCocktail>
+       <select value={context.locale} onChange={context.selectLang}>
+            <option value="en-US">English</option>
+            <option value="hy-AM">Armenian</option>
+          </select>
         <div>
             <LogoutButton>
                 <div className="btn btn-info btn-lg">
@@ -95,7 +100,6 @@ function Home() {
               left: "420px",
               right: 0,
               bottom: 10,
-            //   opacity: 1.5,
               backgroundColor: 'red',
               width: '50%',
               height: "70%",
@@ -108,7 +112,6 @@ function Home() {
               left: '40px',
               right: '40px',
               bottom: '40px',
-            //   opacity: 1.5,
               border: '1px solid #fff',
               backgroundColor: 'green',
               overflow: 'auto',
@@ -163,7 +166,7 @@ function Home() {
                     <Cocktaildata>
                 <div key={item.idDrink}>
                     <div>
-                        <img width={100} height={100} src={cocktails.strDrinkThumb} alt=""/>
+                        <img width={100} height={100} src={item.strDrinkThumb} alt=""/>
                         <label>{item?.strDrink}</label>
                         <button type='button' onClick={()=> {
                             dispatch(deleteCocktail(deletedId))
